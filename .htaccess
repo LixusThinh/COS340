@@ -1,4 +1,11 @@
+Options -Indexes
+
 RewriteEngine On
+RewriteBase /project1/
+
+# Nếu là thư mục hoặc file có thật thì bỏ qua
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
+
+# Đẩy hết vào index.php
 RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
